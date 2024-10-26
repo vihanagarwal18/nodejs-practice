@@ -1,0 +1,18 @@
+flow start from client
+client make request to the server 
+in there is event queue (fifo)
+then these request go to event loop (it checks whether there is any request in the event queue)
+
+a request can be of 2 types
+1>blocking operations/synchronous task
+
+
+2> non blocking operations/ asynchronous task
+
+if request is non blocking operation then it will pick it and process it and send the response to the client 
+
+if request is blocking operation then it go to thread pool(where all the threads are there),
+threads are as a worker which do your task ,then these threads are assigned to a blocking operations if they are available then when task is finished thread will again go to thread pool and result would be given and it would be send as response
+
+
+
